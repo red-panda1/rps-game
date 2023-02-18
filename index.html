@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function getComputerChoice(){
+            let choice= Math.floor(Math.random()*3);
+            if (choice===0){
+                return "Rock";
+            }
+            else if (choice===1){
+                return "Paper";
+            }
+            else{
+            return "Scissors";
+            }
+        }
+
+        let playerPoints=0;
+        let computerPoints=0;
+
+
+        function playRound(playerSelection,computerSelection){
+
+            computerSelection=getComputerChoice();
+            let selectPrompt=prompt("Make Selection").toLowerCase();
+            playerSelection=selectPrompt.charAt(0).toUpperCase() + selectPrompt.slice(1);
+
+            let win=`You win! ${playerSelection} beats ${computerSelection}`;
+            let lose=`You lose, ${computerSelection} beats ${playerSelection}`;
+
+            console.log(`Player: ${playerSelection}`);
+            console.log(`Computer: ${computerSelection}`);
+
+            if (playerSelection==="Rock"){
+                if (computerSelection==="Rock"){
+                    console.log("Tie");
+                }
+                if (computerSelection==="Paper"){
+                    console.log(lose);
+                    computerPoints++;
+                }
+                if (computerSelection==="Scissors"){
+                    console.log(win);
+                    playerPoints++;
+                }
+            }
+
+            else if (playerSelection==="Paper"){
+                if (computerSelection==="Paper"){
+                    console.log("Tie");
+                }
+                if (computerSelection==="Scissors"){
+                    console.log(lose);
+                    computerPoints++;
+                }
+                if (computerSelection==="Rock"){
+                    console.log(win);
+                    playerPoints++;
+                }
+            }
+
+            else {
+                if (computerSelection==="Scissors"){
+                    console.log("Tie");
+                }
+                if (computerSelection==="Rock"){
+                    console.log(lose);
+                    computerPoints++;
+                }
+                if (computerSelection==="Paper"){
+                    console.log(win);
+                    playerPoints++;
+                }
+            }
+
+        }
+
+        function game(){
+            for (let i=1; i<=5; i++){
+                playRound();
+            }
+            if (computerPoints<playerPoints){
+                console.log(`You win the game ${playerPoints} to ${computerPoints}`)
+            }
+            else if (computerPoints>playerPoints){
+                console.log(`You lose the game ${computerPoints} to ${playerPoints}`)
+            }
+            else {
+                console.log(`The game is tied ${playerPoints} to ${computerPoints}`)
+            }
+        }
+    </script>
+</body>
+</html>
