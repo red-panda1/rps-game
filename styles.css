@@ -1,0 +1,75 @@
+body{
+    margin:0;
+    font-family: monospace, monospace, Arial, Helvetica;
+}
+
+.header{
+    display:flex;
+    justify-content:center;
+    background-color:#E3B448;
+    height: 15vh;
+    align-items: center;
+}
+
+.title{
+    font-size:40px;
+    font-weight: 700;
+}
+
+.game{
+    display:flex;
+    flex-direction:column;
+    background-color:#CBD18F;
+    align-items:center;
+    height:85vh;
+}
+
+.rules{
+    padding:50px 0;
+    font-size:25px;
+}
+
+.choices{
+    display:flex;
+    gap:30px;
+}
+
+.choices>button{
+    background-color:#3A6B35;
+    color: white;
+    padding: 35px;
+    font-size: 25px;
+    border-color: #E3B448;
+    border-radius: 50px;
+    border-width:5px;
+}
+
+.points{
+    display:flex;
+    font-size:30px;
+    gap: 80px;
+    margin-top: 50px;
+}
+
+.compChoice{
+    margin-top: 60px;
+    font-size:22px;
+    padding:5px;
+    margin-bottom: 20px;
+}
+
+.roundTxt{
+    font-size:22px;
+}
+
+.finalTxt{
+    margin-top: 60px;
+    font-size:35px;
+    font-weight: 500;
+}
+
+.box{
+    border: 5px solid #E3B448 ;
+    padding:10px;
+}
+
